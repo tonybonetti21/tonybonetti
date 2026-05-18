@@ -10,13 +10,13 @@ const tileVariant: Variants = {
 }
 
 const stagger: Variants = {
-  visible: { transition: { staggerChildren: 0.05 } },
+  visible: { transition: { staggerChildren: 0.04 } },
 }
 
 export default function PortfolioGrid() {
   return (
-    <section className="py-10">
-      <div className="px-5 max-w-lg mx-auto w-full mb-5">
+    <section className="py-12">
+      <div className="px-6 md:px-14 lg:px-20 xl:px-28 max-w-screen-xl mx-auto w-full mb-6">
         <p className="text-xs font-semibold tracking-widest uppercase" style={{ color: 'var(--accent-text)' }}>
           Portfolio
         </p>
@@ -27,7 +27,7 @@ export default function PortfolioGrid() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: '-80px' }}
-        className="grid grid-cols-3"
+        className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
         style={{ gap: '3px' }}
       >
         {photos.map(photo => (
@@ -41,9 +41,9 @@ export default function PortfolioGrid() {
               src={photo.src}
               alt={photo.alt}
               fill
-              className="object-cover transition-all duration-200 group-hover:brightness-100 group-hover:scale-[1.03]"
-              style={{ filter: 'brightness(0.82)' }}
-              sizes="(max-width: 640px) 33vw, 180px"
+              className="object-cover transition-all duration-300 group-hover:brightness-100 group-hover:scale-[1.04]"
+              style={{ filter: 'brightness(0.78)' }}
+              sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 17vw"
             />
           </motion.div>
         ))}

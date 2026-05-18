@@ -14,21 +14,21 @@ const iconMap: Record<string, React.ElementType> = {
   Mail,
 }
 
-const fadeInRight: Variants = {
-  hidden: { opacity: 0, x: -16 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: 'easeOut' } },
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
 }
 
 const stagger: Variants = {
-  visible: { transition: { staggerChildren: 0.05 } },
+  visible: { transition: { staggerChildren: 0.06 } },
 }
 
 export default function LinkCards() {
   const activeLinks = links.filter(l => l.active).sort((a, b) => a.priority - b.priority)
 
   return (
-    <section className="px-5 py-10 max-w-lg mx-auto w-full">
-      <p className="text-xs font-semibold tracking-widest uppercase mb-5" style={{ color: 'var(--accent-text)' }}>
+    <section className="px-6 py-12 md:px-14 lg:px-20 xl:px-28 max-w-screen-xl mx-auto w-full">
+      <p className="text-xs font-semibold tracking-widest uppercase mb-6" style={{ color: 'var(--accent-text)' }}>
         Retrouve-moi sur
       </p>
 
@@ -37,13 +37,13 @@ export default function LinkCards() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: '-60px' }}
-        className="flex flex-col gap-3"
+        className="grid grid-cols-1 md:grid-cols-2 gap-3"
       >
         {activeLinks.map(link => {
           const Icon = iconMap[link.icon] ?? Mail
           const isExternal = link.url.startsWith('http')
           return (
-            <motion.li key={link.id} variants={fadeInRight}>
+            <motion.li key={link.id} variants={fadeInUp}>
               <motion.a
                 href={link.url}
                 target={isExternal ? '_blank' : undefined}
@@ -60,10 +60,8 @@ export default function LinkCards() {
                   <Icon size={18} />
                 </span>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-white truncate">{link.label}</p>
-                  <p className="text-xs truncate" style={{ color: 'var(--text-secondary)' }}>
-                    {link.description}
-                  </p>
+                  <p className="text-sm font-semibold truncate" style={{ color: 'var(--text-primary)' }}>{link.label}</p>
+                  <p className="text-xs truncate" style={{ color: 'var(--text-secondary)' }}>{link.description}</p>
                 </div>
                 <ArrowRight size={16} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
               </motion.a>
