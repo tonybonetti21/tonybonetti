@@ -1,35 +1,37 @@
 import Image from 'next/image'
-import { ArrowDown, Camera, Mail, Map, Mountain, Play, Lock, Video } from 'lucide-react'
+import Link from 'next/link'
+import { Camera, Mail, Map, Mountain, Play, Lock, Video } from 'lucide-react'
 import { GlassButton } from '@/components/glass-button'
 import { HeroSection } from '@/components/hero-section'
 import { MotionReveal } from '@/components/motion-reveal'
 import { SectionHeading } from '@/components/section-heading'
 import { cn } from '@/lib/utils'
 
-/* ─── Images ─────────────────────────────────────────────── */
-const heroImage = 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2400&q=88'
-
+/* ─── Adventures ──────────────────────────────────────────── */
 const adventures = [
   {
-    title: 'Roadtrip Suisse',
-    place: 'Valais, cols et lacs froids',
-    text: 'Une trace lente entre routes suspendues, vallées minérales et fins de journée couleur acier.',
+    title: 'Suisse',
+    place: 'Cols alpins & lacs glaciaires',
+    text: 'Kandersteg, Valais, Berner Oberland — des traces entre routes suspendues et eaux impossiblement bleues.',
     image: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1400&q=84',
     className: 'lg:col-span-7 lg:row-span-2',
-  },
-  {
-    title: 'Oeschinensee',
-    place: 'Berner Oberland',
-    text: 'Le bleu glaciaire comme point fixe, les falaises en silence autour.',
-    image: 'https://images.unsplash.com/photo-1530841344095-c65c20fbd011?auto=format&fit=crop&w=1200&q=84',
-    className: 'lg:col-span-5',
+    href: '/aventures/suisse',
   },
   {
     title: 'Jura',
-    place: 'Crêtes, combes et forêts',
+    place: 'Crêtes, combes & forêts',
     text: 'Des itinéraires proches, brumeux, presque secrets, à hauteur de marche.',
     image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=84',
     className: 'lg:col-span-5',
+    href: '/aventures/jura',
+  },
+  {
+    title: 'Alpes',
+    place: 'Sommets, refuges & glaciers',
+    text: 'Là où l\'horizon devient vertical. Chamonix, Vanoise, Mont-Blanc.',
+    image: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=1200&q=84',
+    className: 'lg:col-span-5',
+    href: '/aventures/alpes',
   },
 ]
 
@@ -82,24 +84,26 @@ function LatestAdventures() {
       <div className="mx-auto mt-14 grid max-w-7xl gap-5 px-5 sm:px-8 lg:grid-cols-12 lg:auto-rows-[20rem]">
         {adventures.map((item, index) => (
           <MotionReveal key={item.title} delay={index * 0.08} className={item.className}>
-            <article className="group image-vignette relative h-[30rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/4 lg:h-full">
-              <Image
-                src={item.image} alt={item.title} fill
-                className="object-cover transition duration-1000 group-hover:scale-105"
-                sizes="(min-width: 1024px) 50vw, 100vw"
-              />
-              <div className="absolute inset-x-0 bottom-0 z-10 p-6 sm:p-8">
-                <p className="mb-3 font-mono text-xs uppercase tracking-[0.32em]"
-                  style={{ color: 'rgba(226,185,126,0.75)' }}>
-                  {item.place}
-                </p>
-                <h3 className="text-3xl font-semibold text-white sm:text-5xl">{item.title}</h3>
-                <p className="mt-4 max-w-xl text-sm leading-6 sm:text-base"
-                  style={{ color: 'rgba(245,240,232,0.68)' }}>
-                  {item.text}
-                </p>
-              </div>
-            </article>
+            <Link href={item.href} className="block h-full">
+              <article className="group image-vignette relative h-[30rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/4 transition duration-500 hover:border-white/20 lg:h-full">
+                <Image
+                  src={item.image} alt={item.title} fill
+                  className="object-cover transition duration-1000 group-hover:scale-105"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+                <div className="absolute inset-x-0 bottom-0 z-10 p-6 sm:p-8">
+                  <p className="mb-3 font-mono text-xs uppercase tracking-[0.32em]"
+                    style={{ color: 'rgba(226,185,126,0.75)' }}>
+                    {item.place}
+                  </p>
+                  <h3 className="text-3xl font-semibold text-white sm:text-5xl">{item.title}</h3>
+                  <p className="mt-4 max-w-xl text-sm leading-6 sm:text-base"
+                    style={{ color: 'rgba(245,240,232,0.68)' }}>
+                    {item.text}
+                  </p>
+                </div>
+              </article>
+            </Link>
           </MotionReveal>
         ))}
       </div>
