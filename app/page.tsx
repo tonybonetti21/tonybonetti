@@ -154,36 +154,31 @@ function Journal() {
 function UpcomingGuides() {
   return (
     <section className="py-24 sm:py-32">
-      <MotionReveal>
-        <SectionHeading
-          eyebrow="Guides à venir"
-          title="Des repères utiles, préparés comme des objets éditoriaux."
-          text="Itinéraires, spots photo, cartes mentales et retours terrain pour prolonger l'expérience hors du feed."
-        />
-      </MotionReveal>
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <p className="font-mono text-xs uppercase tracking-[0.32em]" style={{ color: 'rgba(226,185,126,0.75)' }}>
+          Guides à venir
+        </p>
+        <p className="mt-3 max-w-xl text-sm leading-6 sm:text-base" style={{ color: 'rgba(245,240,232,0.68)' }}>
+          Itinéraires détaillés, spots photo, cartes et retours terrain — pour partir au bon endroit au bon moment.
+        </p>
+      </div>
 
-      <div className="mx-auto mt-14 grid max-w-6xl gap-4 px-5 sm:px-8 md:grid-cols-3">
+      <div className="mx-auto mt-10 grid max-w-6xl gap-4 px-5 sm:px-8 md:grid-cols-3">
         {guides.map((guide, index) => (
           <MotionReveal key={guide.title} delay={index * 0.08}>
             <article className="glass group relative min-h-[18rem] overflow-hidden rounded-[1.7rem] p-6 transition duration-500 hover:-translate-y-1">
               <div className="absolute inset-0 rounded-[1.7rem] opacity-80"
                 style={{ background: 'radial-gradient(circle at 40% 0%, rgba(196,147,90,0.18), transparent 55%)' }} />
               <div className="relative flex h-full flex-col justify-between">
-                <div className="flex items-center justify-between">
-                  <Lock style={{ color: 'rgba(226,185,126,0.8)' }} size={20} />
-                  <span className="rounded-full border border-white/10 bg-white/6 px-3 py-1 text-xs"
-                    style={{ color: 'rgba(245,240,232,0.55)' }}>
-                    Bientôt disponible
-                  </span>
-                </div>
+                <Lock style={{ color: 'rgba(226,185,126,0.35)' }} size={16} />
                 <div>
-                  <p className="mb-2 font-mono text-[0.65rem] uppercase tracking-widest"
-                    style={{ color: 'rgba(226,185,126,0.6)' }}>
+                  <p className="mb-3 font-mono text-xs uppercase tracking-[0.32em]"
+                    style={{ color: 'rgba(226,185,126,0.75)' }}>
                     {guide.region}
                   </p>
                   <h3 className="text-3xl font-semibold text-white">{guide.title}</h3>
-                  <p className="mt-4 text-sm leading-6" style={{ color: 'rgba(245,240,232,0.58)' }}>
-                    Une sélection précise, sensible et visuelle pour marcher, cadrer et partir au bon moment.
+                  <p className="mt-4 text-sm leading-6 sm:text-base" style={{ color: 'rgba(245,240,232,0.68)' }}>
+                    Une sélection précise et visuelle pour marcher, cadrer et partir au bon moment.
                   </p>
                 </div>
               </div>
@@ -191,6 +186,31 @@ function UpcomingGuides() {
           </MotionReveal>
         ))}
       </div>
+
+      {/* Email signup — à brancher sur Brevo/Mailchimp */}
+      <MotionReveal>
+        <div className="mx-auto mt-10 max-w-6xl px-5 sm:px-8">
+          <div className="glass rounded-[1.4rem] p-6 sm:p-8">
+            <p className="mb-1 text-sm font-medium text-white">Être notifié à la sortie</p>
+            <p className="mb-5 text-xs leading-5" style={{ color: 'rgba(245,240,232,0.45)' }}>
+              Laisse ton email — je t'envoie un mot quand un guide est disponible, pas de spam.
+            </p>
+            <form className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <input
+                type="email"
+                placeholder="ton@email.com"
+                className="flex-1 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-white/30 outline-none focus:border-[rgba(196,147,90,0.5)] transition"
+              />
+              <button
+                type="submit"
+                className="rounded-full border border-white/10 bg-white/8 px-6 py-3 text-sm font-medium text-white backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-[rgba(196,147,90,0.5)] hover:bg-white/12 cursor-pointer"
+              >
+                Me notifier
+              </button>
+            </form>
+          </div>
+        </div>
+      </MotionReveal>
     </section>
   )
 }
@@ -274,7 +294,7 @@ export default function Home() {
         </nav>
 
         <LatestAdventures />
-        <Journal />
+        {/* <Journal /> — stand-by */}
         <UpcomingGuides />
         <Portfolio />
         <Contact />
