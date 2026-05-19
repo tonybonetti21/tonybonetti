@@ -10,7 +10,7 @@
 * { box-sizing: border-box; }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
   background: #08060200;
 }
 

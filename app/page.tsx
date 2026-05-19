@@ -1,6 +1,7 @@
 import Image from 'next/image'
-import { ArrowDown, Camera, Mail, Map, Mountain, Play, Sparkles, Lock, Video } from 'lucide-react'
+import { ArrowDown, Camera, Mail, Map, Mountain, Play, Lock, Video } from 'lucide-react'
 import { GlassButton } from '@/components/glass-button'
+import { HeroSection } from '@/components/hero-section'
 import { MotionReveal } from '@/components/motion-reveal'
 import { SectionHeading } from '@/components/section-heading'
 import { cn } from '@/lib/utils'
@@ -67,66 +68,9 @@ const portfolio = [
 ]
 
 /* ─── Sections ────────────────────────────────────────────── */
-function Hero() {
-  return (
-    <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-5 py-16">
-      <div className="absolute inset-0 image-vignette">
-        <Image
-          src={heroImage}
-          alt="Paysage de montagne au lever du jour"
-          fill priority
-          className="scale-105 object-cover"
-          sizes="100vw"
-        />
-      </div>
-      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(8,5,2,0.88),rgba(12,8,3,0.32)_42%,rgba(8,5,2,0.80))]" />
-
-      {/* Top left label */}
-      <div className="absolute left-6 top-6 z-10 hidden rounded-full border border-white/10 bg-white/6 px-4 py-2 text-xs uppercase tracking-[0.28em] text-white/60 backdrop-blur-xl sm:block">
-        Journal alpin
-      </div>
-
-      <MotionReveal className="relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center">
-        <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/8 px-4 py-2 text-xs backdrop-blur-2xl"
-          style={{ color: 'rgba(226,185,126,0.8)' }}>
-          <Sparkles size={13} />
-          Jura · Alpes · Suisse
-        </div>
-
-        <h1 className="text-balance font-semibold tracking-tight text-white drop-shadow-2xl"
-          style={{ fontSize: 'clamp(52px, 10vw, 140px)', lineHeight: 0.95 }}>
-          Tony Bonetti
-        </h1>
-
-        <p className="mt-6 max-w-2xl text-balance text-lg leading-8 sm:text-2xl"
-          style={{ color: 'rgba(245,240,232,0.72)' }}>
-          Randonnée, photo & roadtrips entre Jura, Alpes et Suisse.
-        </p>
-
-        <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row">
-          <GlassButton href="https://instagram.com/tonybonetti" icon={<Camera size={18} />}>
-            Instagram
-          </GlassButton>
-          <GlassButton href="https://tiktok.com/@tonybonetti" icon={<Video size={18} />}>
-            TikTok
-          </GlassButton>
-          <GlassButton href="#journal" icon={<ArrowDown size={18} />} variant="dark">
-            Explorer le journal
-          </GlassButton>
-        </div>
-      </MotionReveal>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 z-10 h-14 w-px -translate-x-1/2 overflow-hidden bg-white/18">
-        <div className="h-1/2 w-full animate-pulse" style={{ background: 'rgba(196,147,90,0.8)' }} />
-      </div>
-    </section>
-  )
-}
-
 function LatestAdventures() {
   return (
-    <section className="relative py-24 sm:py-32">
+    <section id="suite" className="relative py-24 sm:py-32">
       <MotionReveal>
         <SectionHeading
           eyebrow="Dernières traces"
@@ -306,7 +250,7 @@ function Contact() {
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Hero />
+      <HeroSection />
 
       <div className="relative">
         {/* Fixed top gradient */}

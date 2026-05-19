@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
 import Script from 'next/script'
+import { ScrollTop } from '@/components/scroll-top'
 import './globals.css'
 
 const manrope = Manrope({
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="canonical" href="https://tonybonetti.fr" />
       </head>
       <body style={{ fontFamily: 'var(--font-manrope), -apple-system, sans-serif' }}>
+        <ScrollTop />
         {children}
         <Script
           defer
