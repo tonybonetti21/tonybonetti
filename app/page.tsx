@@ -72,16 +72,14 @@ const portfolio = [
 /* ─── Sections ────────────────────────────────────────────── */
 function LatestAdventures() {
   return (
-    <section id="suite" className="relative py-24 sm:py-32">
-      <MotionReveal>
-        <SectionHeading
-          eyebrow="Dernières traces"
-          title="Des aventures comme des plans de cinéma, entre routes hautes et lacs impossibles."
-          text="Chaque sortie devient une séquence : un itinéraire, une lumière, un fragment de montagne à garder."
-        />
-      </MotionReveal>
+    <section id="suite" className="relative pt-14 pb-24 sm:pt-16 sm:pb-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <p className="font-mono text-xs uppercase tracking-[0.32em]" style={{ color: 'rgba(226,185,126,0.75)' }}>
+          Mes aventures
+        </p>
+      </div>
 
-      <div className="mx-auto mt-14 grid max-w-7xl gap-5 px-5 sm:px-8 lg:grid-cols-12 lg:auto-rows-[20rem]">
+      <div className="mx-auto mt-10 grid max-w-7xl gap-5 px-5 sm:px-8 lg:grid-cols-12 lg:auto-rows-[20rem]">
         {adventures.map((item, index) => (
           <MotionReveal key={item.title} delay={index * 0.08} className={item.className}>
             <Link href={item.href} className="block h-full">
