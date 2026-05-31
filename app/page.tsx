@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Camera, Mail, Map, Mountain, Play, Lock, Video } from 'lucide-react'
+import { Camera, Mail, Play, Lock, Video } from 'lucide-react'
 import { GlassButton } from '@/components/glass-button'
 import { HeroSection } from '@/components/hero-section'
 import { MotionReveal } from '@/components/motion-reveal'
@@ -250,17 +250,14 @@ function Contact() {
     <section className="relative px-5 py-28 sm:px-8 sm:py-36">
       <MotionReveal>
         <div className="mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-2xl sm:p-12">
-          <p className="mb-5 font-mono text-xs uppercase tracking-[0.36em]"
-            style={{ color: 'rgba(226,185,126,0.7)' }}>
+          <p className="mb-5 font-mono text-xs uppercase tracking-[0.32em]"
+            style={{ color: 'rgba(226,185,126,0.75)' }}>
             Contact
           </p>
-          <h2 className="text-balance text-4xl font-semibold text-white sm:text-6xl">
-            Collaborations & contact
-          </h2>
-          <p className="mt-5 max-w-2xl text-base leading-7" style={{ color: 'rgba(245,240,232,0.65)' }}>
-            Projets outdoor, contenus photo, campagnes tourisme, récits de destination et collaborations de marque.
+          <p className="max-w-2xl text-base leading-7 sm:text-lg" style={{ color: 'rgba(245,240,232,0.68)' }}>
+            Disponible pour des collaborations outdoor, créations de contenu photo & vidéo, campagnes tourisme et partenariats de marque.
           </p>
-          <div className="mt-9">
+          <div className="mt-8">
             <GlassButton href="mailto:contact@tonybonetti.fr" icon={<Mail size={18} />}>
               contact@tonybonetti.fr
             </GlassButton>
@@ -303,21 +300,24 @@ export default function Home() {
         <Contact />
       </div>
 
-      <footer className="flex items-center justify-between border-t border-white/8 px-5 py-8 text-xs sm:px-8"
+      <footer className="border-t border-white/8 px-5 py-10 sm:px-8"
         style={{ color: 'rgba(245,240,232,0.4)' }}>
-        <span>Tony Bonetti</span>
-        <span className="flex items-center gap-2">
-          <Mountain size={13} />
-          Alpes · Jura · Suisse
-        </span>
-        <span className="hidden items-center gap-2 sm:flex">
-          <Camera size={13} />
-          Journal visuel
-        </span>
-        <span className="hidden items-center gap-2 sm:flex">
-          <Map size={13} />
-          Roadtrips
-        </span>
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 sm:flex-row sm:justify-between">
+          <span className="text-xs">© 2026 tonybonetti.fr — Tous droits réservés</span>
+
+          <div className="flex items-center gap-5">
+            <a href="https://www.instagram.com/tonybonetti15" target="_blank" rel="noopener noreferrer"
+              className="transition hover:text-white"><Camera size={16} /></a>
+            <a href="https://www.tiktok.com/@tonybonetti" target="_blank" rel="noopener noreferrer"
+              className="transition hover:text-white"><Video size={16} /></a>
+            <a href="https://youtube.com/@tonybonetti" target="_blank" rel="noopener noreferrer"
+              className="transition hover:text-white"><Play size={16} /></a>
+          </div>
+
+          <a href="/mentions-legales" className="text-xs transition hover:text-white">
+            Mentions légales
+          </a>
+        </div>
       </footer>
     </main>
   )
