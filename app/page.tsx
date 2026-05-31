@@ -65,12 +65,12 @@ const guides = [
 const portfolio = [
   { src: 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1400&q=84', className: 'col-span-7 h-[34rem]' },
   { src: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=1200&q=84', className: 'col-span-5 mt-16 h-[26rem]' },
-  { src: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1100&q=84', className: 'col-span-4 h-[22rem]' },
+  { src: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1100&q=84', className: 'col-span-4 h-[24rem]' },
   { src: 'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?auto=format&fit=crop&w=1400&q=84', className: 'col-span-8 h-[28rem]' },
-  { src: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=84', className: 'col-span-5 mt-10 h-[28rem]' },
+  { src: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=84', className: 'col-span-5 mt-12 h-[28rem]' },
   { src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=84', className: 'col-span-7 h-[32rem]' },
   { src: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1400&q=84', className: 'col-span-8 h-[26rem]' },
-  { src: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?auto=format&fit=crop&w=1200&q=84', className: 'col-span-4 mt-12 h-[22rem]' },
+  { src: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?auto=format&fit=crop&w=1200&q=84', className: 'col-span-4 mt-10 h-[22rem]' },
 ]
 
 /* ─── Sections ────────────────────────────────────────────── */
@@ -221,15 +221,14 @@ function UpcomingGuides() {
 
 function Portfolio() {
   return (
-    <section className="relative overflow-hidden py-24 sm:py-36">
-      <MotionReveal>
-        <SectionHeading
-          eyebrow="Portfolio immersif"
-          title="Des images qui respirent, posées comme des fragments de film."
-        />
-      </MotionReveal>
+    <section className="relative overflow-hidden pt-14 pb-24 sm:pt-16 sm:pb-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <p className="font-mono text-xs uppercase tracking-[0.32em]" style={{ color: 'rgba(226,185,126,0.75)' }}>
+          Portfolio
+        </p>
+      </div>
 
-      <div className="mx-auto mt-16 grid max-w-7xl gap-5 px-5 sm:px-8 lg:grid-cols-12">
+      <div className="mx-auto mt-10 grid max-w-7xl gap-5 px-5 sm:px-8 lg:grid-cols-12">
         {portfolio.map((item, index) => (
           <MotionReveal key={item.src} delay={index * 0.06} className={item.className}>
             <div className="group image-vignette relative h-[24rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/4">
