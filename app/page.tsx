@@ -67,6 +67,10 @@ const portfolio = [
   { src: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=1200&q=84', className: 'col-span-5 mt-16 h-[26rem]' },
   { src: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1100&q=84', className: 'col-span-4 h-[22rem]' },
   { src: 'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?auto=format&fit=crop&w=1400&q=84', className: 'col-span-8 h-[28rem]' },
+  { src: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=84', className: 'col-span-5 mt-10 h-[28rem]' },
+  { src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=84', className: 'col-span-7 h-[32rem]' },
+  { src: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1400&q=84', className: 'col-span-8 h-[26rem]' },
+  { src: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?auto=format&fit=crop&w=1200&q=84', className: 'col-span-4 mt-12 h-[22rem]' },
 ]
 
 /* ─── Sections ────────────────────────────────────────────── */
