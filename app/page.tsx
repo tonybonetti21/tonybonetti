@@ -221,7 +221,7 @@ function UpcomingGuides() {
 
 function Portfolio() {
   return (
-    <section className="relative overflow-hidden pt-14 pb-24 sm:pt-16 sm:pb-32">
+    <section id="portfolio" className="relative overflow-hidden pt-14 pb-24 sm:pt-16 sm:pb-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <p className="font-mono text-xs uppercase tracking-[0.32em]" style={{ color: 'rgba(226,185,126,0.75)' }}>
           Portfolio
@@ -282,8 +282,8 @@ export default function Home() {
         <nav className="fixed left-1/2 top-4 z-50 hidden -translate-x-1/2 items-center gap-1 rounded-full border border-white/10 bg-black/22 p-1 text-sm backdrop-blur-2xl md:flex"
           style={{ color: 'rgba(245,240,232,0.65)' }}>
           {[
-            { label: 'Journal', href: '#journal' },
-            { label: 'Instagram', href: 'https://instagram.com/tonybonetti' },
+            { label: 'Aventures', href: '#suite' },
+            { label: 'Portfolio', href: '#portfolio' },
             { label: 'Contact', href: 'mailto:contact@tonybonetti.fr' },
           ].map(({ label, href }) => (
             <a key={label} href={href}
